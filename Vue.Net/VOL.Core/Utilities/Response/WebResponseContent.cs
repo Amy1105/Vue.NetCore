@@ -18,6 +18,7 @@ namespace VOL.Core.Utilities
         //public string Message { get; set; }
         public object Data { get; set; }
 
+
         public WebResponseContent OK()
         {
             this.Status = true;

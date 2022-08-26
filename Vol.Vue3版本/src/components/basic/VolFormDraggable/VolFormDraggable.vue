@@ -1,6 +1,6 @@
 <template>
   <div class="drag-container">
-    <!-- @start="onStart" -->
+    <!-- @start="组件列表" -->
     <div class="drag-left">
       <div class="left-title">组件列表</div>
       <draggable
@@ -270,6 +270,8 @@
         </el-form>
       </el-scrollbar>
     </div>
+
+    <!-- @start="组件属性" -->
     <div class="drag-right">
       <div class="left-title">组件属性</div>
       <div class="attr" v-show="currentIndex != -1">
@@ -668,6 +670,7 @@ export default {
     },
     setSpan() {},
     preview(isPre) {
+      debugger
       let _fields = {};
       let _formOptions = [];
       let endIndex = -1;
@@ -801,6 +804,7 @@ export default {
         });
     },
     save() {
+      debugger
       this.preview(false);
       this.$emit("save", {
         daraggeOptions: this.currentComponents,
@@ -808,6 +812,7 @@ export default {
       });
     },
     download() {
+      debugger
       this.preview(false);
       downloadForm.call(this);
     },
@@ -860,6 +865,7 @@ export default {
       this.currentItem = {};
     },
     clearItems() {
+      debugger
       this.currentComponents.length = 0;
       this.colWidth = 100;
       this.currentIndex = -1;
